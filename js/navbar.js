@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
           <a href="about.html" class="${currentPage === 'about.html' ? 'active' : ''}">About</a>
           <a href="contact.html" class="${currentPage === 'contact.html' ? 'active' : ''}">Contact</a>
           <a href="index.html" class="${currentPage === 'index.html' ? 'active' : ''}">Home</a>
-
         </div>
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
       </div>
