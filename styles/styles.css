@@ -3,9 +3,9 @@
 ======================== */
 :root {
   --primary-color: #ff3c3c;   /* pinball accent red */
-  --secondary-color: #222;    /* dark text/nav */
-  --background-color: #f9f9f9;
-  --link-color: #0077cc;
+  --secondary-color: #ffffff;    /* dark text/nav */
+  --background-color: #333333;
+  --link-color: #ffcc00;
   --font-body: 'Arial', sans-serif;
   --font-heading: 'Georgia', serif;
 }
@@ -56,7 +56,7 @@ a:hover {
    Navbar
 ======================== */
 .navbar {
-  background-color: #004aad;
+  background-color: #3073ca;
   color: white;
   padding: 1rem 2rem;
   position: sticky;
@@ -128,6 +128,65 @@ a:hover {
   opacity: 1;
 }
 
+/* Footer - consistent across all pages */
+footer {
+  width: 100%;               /* spans full browser width */
+  background-color: #222;    /* dark background */
+  color: #fff;               /* white text */
+  text-align: center;        /* center text */
+  padding: 1rem 0;           /* vertical padding */
+  margin-top: 2rem;
+  font-size: 0.9rem;         /* optional: slightly smaller text */
+}
+
+
+/* ========================
+   Contact Form
+======================== */
+.contact-form {
+  background-color: #222;       /* dark gray box */
+  color: white;                 /* text color */
+  padding: 2rem;                /* space inside the box */
+  border-radius: 12px;          /* rounded corners */
+  max-width: 700px;             /* width limit */
+  margin: 2rem auto;            /* center horizontally + vertical spacing */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* nice shadow for floating effect */
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid #555;
+  border-radius: 6px;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #ccc;
+}
+
+.contact-form button {
+  background-color: #ff3c3c; /* accent red */
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: darkred;
+}
+
+
 /* ========================
    Main Content
 ======================== */
@@ -193,7 +252,7 @@ button:hover {
   /* Mobile menu */
   .nav-links {
     flex-direction: column;
-    background-color: #004aad;
+    background-color: #3073ca;
     position: fixed;
     top: 0;
     right: -250px; /* hidden offscreen */

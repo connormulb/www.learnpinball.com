@@ -1,169 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FLXCWG5S1D"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FLXCWG5S1D');
-</script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - Learn Pinball</title>
+  
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="styles/styles.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
-    }
 
-    /* Navbar styles (desktop & mobile) */
-    .navbar {
-      background-color: #004aad;
-      color: white;
-      padding: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      padding: 0.5rem 0.75rem;
-      border-radius: 4px;
-      transition: background 0.2s;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      background-color: #002f7a;
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      color: white;
-      cursor: pointer;
-    }
-
-    /* Mobile menu */
-    @media (max-width: 768px) {
-      .nav-links {
-        flex-direction: column;
-        background-color: #004aad;
-        position: fixed;
-        top: 0;
-        right: -250px;
-        height: 100%;
-        width: 250px;
-        padding: 2rem 1rem;
-        gap: 1.5rem;
-        flex-wrap: nowrap;
-        transition: right 0.3s ease;
-        z-index: 1000;
-      }
-
-      .nav-links.active {
-        right: 0;
-      }
-
-      .nav-toggle {
-        display: block;
-      }
-
-      .nav-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.5);
-        z-index: 900;
-        transition: opacity 0.3s ease;
-      }
-
-      .nav-overlay.active {
-        display: block;
-      }
-    }
-
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    section {
-      margin-bottom: 2rem;
-    }
-
-    h2 {
-      color: #004aad;
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      margin-bottom: 1rem;
-    }
-
-    .team-member {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-
-    .team-member img {
-      border-radius: 50%;
-      width: 80px;
-      height: 80px;
-      margin-right: 1rem;
-      object-fit: cover;
-    }
-
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-  </style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FLXCWG5S1D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FLXCWG5S1D');
+  </script>
 </head>
 <body>
-
-  <!-- Navbar will be inserted here -->
+  <!-- Navbar -->
   <script src="js/navbar.js"></script>
 
   <main>
     <section>
       <h2>Our Mission</h2>
-      <p>Learn Pinball was published in January of 2026 as a helpful resource to help new pinball players and players looking to become more involved in the hobby.</p>
+      <p>Learn Pinball was published in January of 2026 as a helpful resource for new pinball players and those looking to become more involved in the hobby.</p>
     </section>
 
     <section>
@@ -172,7 +33,7 @@
         <!-- <img src="images/connor.jpg" alt="Connor Mulberry"> -->
         <div>
           <h3>Connor Mulberry</h3>
-          <p>Competitive Pinball Player and Enthusiast - Find my <a href="https://www.ifpapinball.com/players/view.php?p=54324">IFPA Profile</a> here!</p>
+          <p>Competitive Pinball Player and Enthusiast. Find my <a href="https://www.ifpapinball.com/players/view.php?p=54324">IFPA Profile</a> here!</p>
         </div>
       </div>
     </section>
