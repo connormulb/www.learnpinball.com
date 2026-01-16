@@ -189,7 +189,7 @@ footer {
   text-align: center;         /* center text inside elements */
   
   /* Optional styling */
-  margin-top: -2rem
+  margin-top: -2rem;
   min-height: 200px;          /* or 50vh for half screen height */
   padding: 2rem;
 }
