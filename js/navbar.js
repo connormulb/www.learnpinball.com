@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const currentPage = window.location.pathname.split("/").pop();
+  // Fix for homepage path
+  let currentPage = window.location.pathname.split("/").pop();
+  if (currentPage === "" || currentPage === "/") currentPage = "index.html";
 
   const nav = `
     <nav class="navbar">
@@ -23,21 +25,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.querySelector(".nav-overlay");
 
   if (toggleButton && navLinks && overlay) {
-    // Toggle menu
     toggleButton.addEventListener("click", () => {
       const isActive = navLinks.classList.toggle("active");
       overlay.classList.toggle("active");
       toggleButton.setAttribute("aria-expanded", isActive);
     });
 
-    // Close menu when overlay is clicked
     overlay.addEventListener("click", () => {
       navLinks.classList.remove("active");
       overlay.classList.remove("active");
       toggleButton.setAttribute("aria-expanded", false);
     });
 
-    // **NEW**: close menu when any link is clicked (mobile)
+    // Close menu when any link is clicked
     navLinks.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         navLinks.classList.remove("active");
