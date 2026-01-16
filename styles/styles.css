@@ -36,6 +36,22 @@ a:hover {
   color: var(--primary-color);
 }
 
+/* Resource list styling */
+.resource-list {
+  list-style: none;          /* removes bullets from URLs */
+  padding-left: 0;
+}
+
+.resource-list > li {
+  margin-bottom: 1rem;
+}
+
+.resource-list > li > ul {
+  margin-top: 0.3rem;
+  margin-left: 1.5rem;       /* indent description bullets */
+}
+
+
 /* ========================
    Navbar
 ======================== */
@@ -157,6 +173,7 @@ button {
 button:hover {
   background-color: darkred;
 }
+
 
 /* ========================
    Mobile Responsive
