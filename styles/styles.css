@@ -128,7 +128,10 @@ a:hover {
   opacity: 1;
 }
 
-/* Footer - consistent across all pages */
+/* ========================
+   Footer
+======================== */
+
 footer {
   width: 100%;               /* spans full browser width */
   background-color: #222;    /* dark background */
@@ -138,6 +141,75 @@ footer {
   margin-top: 2rem;
   font-size: 0.9rem;         /* optional: slightly smaller text */
 }
+
+/* ========================
+   About Page Sections
+======================== */
+
+.about-section {
+  background-color: #444444; /* subtle contrast */
+  color: #eeeeee;            /* text inside section */
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* optional subtle depth */
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  color: #3073ca;
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.about-section a {
+  color: #ffcc00;
+  text-decoration: underline;
+}
+
+.about-section a:hover {
+  color: #d4ad10;
+}
+
+/* ========================
+   Hero
+======================== */
+
+.hero {
+  display: flex;              /* use flexbox */
+  flex-direction: column;     /* stack h1 and p vertically */
+  justify-content: center;    /* vertical centering */
+  align-items: center;        /* horizontal centering */
+  text-align: center;         /* center text inside elements */
+  
+  /* Optional styling */
+  margin-top: -2rem
+  min-height: 200px;          /* or 50vh for half screen height */
+  padding: 2rem;
+}
+
+
+/* Main and body adjustments */
+main {
+  padding: 2rem 1rem;
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
 
 
 /* ========================
