@@ -1,0 +1,182 @@
+/* ========================
+   Root Colors & Fonts
+======================== */
+:root {
+  --primary-color: #ff3c3c;   /* pinball accent red */
+  --secondary-color: #222;    /* dark text/nav */
+  --background-color: #f9f9f9; 
+  --link-color: #0077cc;
+  --font-body: 'Arial', sans-serif;
+  --font-heading: 'Georgia', serif;
+}
+
+/* ========================
+   Global Styles
+======================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: var(--secondary-color);
+  background-color: var(--background-color);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+/* ========================
+   Navbar
+======================== */
+.navbar {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  transition: max-height 0.3s ease;
+}
+
+/* Mobile menu hidden by default */
+.nav-links {
+  max-height: 0;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.nav-links.active {
+  max-height: 300px; /* adjust for number of links */
+}
+
+.nav-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Desktop Navbar */
+@media (min-width: 768px) {
+  .nav-links {
+    flex-direction: row;
+    max-height: none;
+    overflow: visible;
+  }
+  .nav-toggle {
+    display: none;
+  }
+}
+
+/* ========================
+   Main Content
+======================== */
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* ========================
+   Headings
+======================== */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  margin-bottom: 0.5rem;
+  color: var(--secondary-color);
+}
+
+/* ========================
+   Cards / Resource Blocks
+======================== */
+.card {
+  background-color: white;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* ========================
+   Buttons
+======================== */
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: darkred;
+}
+
+/* ========================
+   Mobile Friendly
+======================== */
+@media (max-width: 768px) {
+  main {
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+  .card {
+    padding: 0.8rem;
+  }
+}
+
+/* ========================
+   Smooth scrolling
+======================== */
+html {
+  scroll-behavior: smooth;
+
+  .category-card li {
+  margin-bottom: 1rem;
+}
+
+.category-card li p {
+  margin: 0.3rem 0 0 0; /* small space below link */
+  font-size: 0.9rem;    /* slightly smaller than link */
+  color: #555;          /* softer color for description */
+  line-height: 1.4;
+}
+
+}

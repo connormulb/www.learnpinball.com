@@ -2,45 +2,106 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Pinball Resources</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-    }
-    h1 {
-      text-align: center;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      margin: 12px 0;
-    }
-    a {
-      font-size: 18px;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn Pinball</title>
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
+  <!-- Navbar will be injected by navbar.js -->
 
-<h1>Pinball Resources! Test</h1>
-<p>A curated list of useful pinball links.</p>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Welcome to Learn Pinball</h1>
+      <p>All your pinball resources in one place — tournaments, rules, forums, and more!</p>
+    </section>
 
-<ul>
-  <li><a href="https://www.ifpapinball.com/" target="_blank">IFPA</a></li>
-  <li><a href="https://pinside.com/" target="_blank">Pinside</a></li>
-  <li><a href="https://pinballmap.com/" target="_blank">Pinball Map</a></li>
-</ul>
+    <!-- Competition Category -->
+    <section class="category">
+      <h2>Competition</h2>
+      <div class="category-card">
+        <ul>
+          <li><a href="https://ifpapinball.com">IFPA Official Site</a>
+            <p>International Flipper Pinball Association. Home for all rankings, tournament info, and much more.</p>
+            </li>
+          <li><a href="https://app.matchplay.events/">Matchplay Events</a>
+            <p>Matchplay is used by many tournament organizers to display tournament information. Register an account to easily find info about the tournament you're playing in.</p>
+            </li>
+          <li><a href="https://ifpapinball.com/rules/">Official IFPA Rules</a>
+            <p>The official IFPA tournament rules. Not every tournament will use these exact rules, but most do.</p>
+            </li>
+        </ul>
+      </div>
+    </section>
 
+    <!-- Rules Category -->
+    <section class="category">
+      <h2>Strategies and Rules</h2>
+      <div class="category-card">
+        <ul>
+          <li><a href="https://rules.silverballmania.com/home">Bob Matthews Guide</a>
+            <p>A comprehenensive rules guide of over 400 machines from the 1960s-1980s. Features rules breakdown and strategies.</p>
+            </li>
+          <li><a href="https://www.youtube.com/playlist?list=PL-WQLGFMr97CQpOQDEvRqAiSqcvSuK11h">Bowen Video Tutorials</a>
+            <p>Video Tutorials from Bowen Kerins on a variety of games. Learn rules and strategies.</p>
+            </li>
+          <li><a href="pintips.net">Pintips</a>
+            <p>Pintips is a feature of matchplay.events. Search a machine and find quick strategy tips on how to play..</p>
+            </li>
+          <li><a href="https://pinballprimer.github.io/">Pinball Primer</a>
+            <p>Pinball Primer features rules and strategies, history, and a pinball glossary.</p>
+            </li>
+          <li><a href="https://tiltforums.com/c/game-specific/rulesheet-wikis/18">Tilt Forums Rulesheets</a>
+            <p>Tilt Forums is a great place to find full rulesheets for modern pinball machines.</p>
+            </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Rules Category -->
+    <section class="category">
+      <h2>Flipper Skills Tutorials</h2>
+      <div class="category-card">
+        <ul>
+          <li><a href="https://youtube.com/playlist?list=PL-WQLGFMr97DnxeE1Rmi-wAwa-Vm7D-7i&si=E-wn_m6JIOBA5jTm">PAPA Flipper Skills Tutorials</a>
+            <p>Video tutorials from PAPA pinball of flipper skills and techniques</p>
+            </li>
+          <li><a href="https://www.youtube.com/playlist?list=PL31W94V2HVSW7ksDyZ_183rUBxiSQon75">AbeFlips Pinball Skills Series</a>
+            <p>Indepth tutorials on must-learn flipper skills and techniques.</p>
+            </li>
+          <li><a href="https://www.deadflip.com/tutorials">Deadflip Flipper Skills GIFS</a>
+            <p>Quick gifs showing common flipper skills and techniques.</p>
+            </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Forums Category -->
+    <section class="category">
+      <h2>Forums</h2>
+      <div class="category-card">
+        <ul>
+          <li><a href="https://pinside.com">Pinside Forum</a>
+            <p>A forum for all things pinball. Mainly focused on gameplay/tech rather than tournament info.</p>
+            </li>
+          <li><a href="https://tiltforums.com">Tilt Forums</a>
+            <p>A forum similar to Pinside. Contains a lot of rules information, as mentioned in the rules section.</p>
+            </li>
+          <li><a href="https://reddit.com/r/pinball">Reddit Pinball Community</a>
+            <p>The Reddit pinball community.</p>
+            </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer style="text-align:center; padding:1rem; margin-top:2rem; color:#555;">
+    &copy; 2026 Learn Pinball
+  </footer>
+
+  <!-- Navbar JS -->
+  <script src="js/navbar.js"></script>
 </body>
 </html>
