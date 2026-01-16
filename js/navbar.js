@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="nav-container">
         <a class="brand" href="index.html">Learn Pinball</a>
         <div class="nav-links">
+          <a href="index.html" class="${currentPage === 'index.html' ? 'active' : ''}">Home</a>
           <a href="about.html" class="${currentPage === 'about.html' ? 'active' : ''}">About</a>
           <a href="contact.html" class="${currentPage === 'contact.html' ? 'active' : ''}">Contact</a>
-          <a href="index.html" class="${currentPage === 'index.html' ? 'active' : ''}">Home</a>
         </div>
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
       </div>
@@ -23,16 +23,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.querySelector(".nav-overlay");
 
   if (toggleButton && navLinks && overlay) {
+    // Toggle menu
     toggleButton.addEventListener("click", () => {
       const isActive = navLinks.classList.toggle("active");
       overlay.classList.toggle("active");
       toggleButton.setAttribute("aria-expanded", isActive);
     });
 
+    // Close menu when overlay is clicked
     overlay.addEventListener("click", () => {
       navLinks.classList.remove("active");
       overlay.classList.remove("active");
       toggleButton.setAttribute("aria-expanded", false);
+    });
+
+    // **NEW**: close menu when any link is clicked (mobile)
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        overlay.classList.remove("active");
+        toggleButton.setAttribute("aria-expanded", false);
+      });
     });
   }
 });
