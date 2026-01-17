@@ -2,12 +2,13 @@
    Root Colors & Fonts
 ======================== */
 :root {
-  --primary-color: #ff3c3c;   /* pinball accent red */
-  --secondary-color: #ffffff;    /* dark text/nav */
+  --primary-color: #4ABEFF;   
+  --secondary-color: #ffffff;  
   --background-color: #333333;
   --link-color: #ffcc00;
   --font-body: 'Arial', sans-serif;
-  --font-heading: 'Georgia', serif;
+  --font-heading: 'Fredoka One', sans-serif; 
+  --header-color: #448fe6;
 }
 
 /* ========================
@@ -35,22 +36,6 @@ a {
 a:hover {
   color: var(--primary-color);
 }
-
-/* Resource list styling */
-.resource-list {
-  list-style: none;          /* removes bullets from URLs */
-  padding-left: 0;
-}
-
-.resource-list > li {
-  margin-bottom: 1rem;
-}
-
-.resource-list > li > ul {
-  margin-top: 0.3rem;
-  margin-left: 1.5rem;       /* indent description bullets */
-}
-
 
 /* ========================
    Navbar
@@ -86,7 +71,6 @@ a:hover {
   gap: 1rem;
 }
 
-/* Links styling */
 .nav-links a {
   color: white;
   text-decoration: none;
@@ -100,7 +84,6 @@ a:hover {
   background-color: #002f7a;
 }
 
-/* Toggle button (hamburger) */
 .nav-toggle {
   display: none;
   background: none;
@@ -110,7 +93,6 @@ a:hover {
   cursor: pointer;
 }
 
-/* Overlay behind mobile menu */
 .nav-overlay {
   display: none;
   position: fixed;
@@ -129,100 +111,80 @@ a:hover {
 }
 
 /* ========================
-   Footer
+   Hero Section
 ======================== */
-
-footer {
-  width: 100%;               /* spans full browser width */
-  background-color: #222;    /* dark background */
-  color: #fff;               /* white text */
-  text-align: center;        /* center text */
-  padding: 1rem 0;           /* vertical padding */
-  margin-top: 2rem;
-  font-size: 0.9rem;         /* optional: slightly smaller text */
-}
-
-/* ========================
-   About Page Sections
-======================== */
-
-.about-section {
-  background-color: #444444; /* subtle contrast */
-  color: #eeeeee;            /* text inside section */
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin: 2rem auto;
-  max-width: 800px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* optional subtle depth */
-}
-
-.about-section h2 {
-  font-size: 2rem;
-  color: #4a8ce2;
-  margin-bottom: 1rem;
-}
-
-.about-section p {
-  font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom: 1rem;
-}
-
-.about-section a {
-  color: #ffcc00;
-  text-decoration: underline;
-}
-
-.about-section a:hover {
-  color: #d4ad10;
-}
-
-/* ========================
-   Hero
-======================== */
-
 .hero {
-  display: flex;              /* use flexbox */
-  flex-direction: column;     /* stack h1 and p vertically */
-  justify-content: center;    /* vertical centering */
-  align-items: center;        /* horizontal centering */
-  text-align: center;         /* center text inside elements */
-  
-  /* Optional styling */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   margin-top: -2rem;
-  min-height: 200px;          /* or 50vh for half screen height */
+  min-height: 200px;
   padding: 2rem;
 }
 
-
-/* Main and body adjustments */
-main {
-  padding: 2rem 1rem;
+/* ========================
+   Category Cards / Resource Lists
+======================== */
+.category-card {
+  background-color: #222;              /* dark gray */
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 1rem 0;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+  transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.05); /* subtle border */
 }
 
-/* Footer */
-footer {
-  width: 100%;
-  background-color: #222;
-  color: #fff;
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: 2rem;
+.category-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+.resource-list {
+  list-style: none;
+  padding-left: 0;
+}
 
+.resource-list > li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.resource-list > li > a {
+  font-weight: bold;
+  text-decoration: underline;
+  color: var(--link-color);
+}
+
+.resource-list > li > a:hover {
+  color: var(--primary-color);
+}
+
+.resource-list > li > ul {
+  list-style-type: disc;
+  margin: 0.3rem 0 0.5rem 1.5rem;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.resource-list > li > ul > li {
+  margin-bottom: 0.3rem;
+}
 
 /* ========================
    Contact Form
 ======================== */
 .contact-form {
-  background-color: #222;       /* dark gray box */
-  color: white;                 /* text color */
-  padding: 2rem;                /* space inside the box */
-  border-radius: 12px;          /* rounded corners */
-  max-width: 700px;             /* width limit */
-  margin: 2rem auto;            /* center horizontally + vertical spacing */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* nice shadow for floating effect */
+  background-color: #222;
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 700px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
 .contact-form input,
@@ -244,7 +206,7 @@ footer {
 }
 
 .contact-form button {
-  background-color: #ff3c3c; /* accent red */
+  background-color: #ff3c3c;
   color: white;
   border: none;
   padding: 0.6rem 1.2rem;
@@ -258,9 +220,8 @@ footer {
   background-color: darkred;
 }
 
-
 /* ========================
-   Main Content
+   Main / Headings / Cards
 ======================== */
 main {
   max-width: 900px;
@@ -268,14 +229,14 @@ main {
   padding: 1rem;
 }
 
-/* Headings */
 h1, h2, h3 {
   font-family: var(--font-heading);
   margin-bottom: 0.5rem;
-  color: var(--secondary-color);
+  color: var(--header-color); /* make headers stand out */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5); /* optional subtle shadow */
 }
 
-/* Cards / Resource Blocks */
+
 .card {
   background-color: white;
   padding: 1rem;
@@ -290,7 +251,6 @@ h1, h2, h3 {
   box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
-/* Buttons */
 button {
   background-color: var(--primary-color);
   color: white;
@@ -305,13 +265,57 @@ button:hover {
   background-color: darkred;
 }
 
+/* ========================
+   Footer
+======================== */
+footer {
+  width: 100%;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* ========================
+   About Section
+======================== */
+.about-section {
+  background-color: #444;
+  color: #eee;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  color: #4a8ce2;
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.about-section a {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+.about-section a:hover {
+  color: #d4ad10;
+}
 
 /* ========================
    Mobile Responsive
 ======================== */
 @media (max-width: 768px) {
-
-  /* Adjust main & cards */
   main {
     margin: 1rem;
     padding: 0.5rem;
@@ -321,24 +325,23 @@ button:hover {
     padding: 0.8rem;
   }
 
-  /* Mobile menu */
   .nav-links {
     flex-direction: column;
     background-color: #3073ca;
     position: fixed;
     top: 0;
-    right: -250px; /* hidden offscreen */
+    right: -250px;
     height: 100%;
     width: 250px;
     padding: 2rem 1rem;
     gap: 1.5rem;
     flex-wrap: nowrap;
     transition: right 0.3s ease;
-    z-index: 1100; /* above overlay */
+    z-index: 1100;
   }
 
   .nav-links.active {
-    right: 0; /* slide in */
+    right: 0;
   }
 
   .nav-toggle {
