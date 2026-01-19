@@ -1,49 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Fix for homepage path
   let currentPage = window.location.pathname.split("/").pop();
   if (currentPage === "" || currentPage === "/") currentPage = "index.html";
 
-  const nav = `
+  const navHTML = `
     <nav class="navbar">
       <div class="nav-container">
-        <a class="brand" href="index.html">Learn Pinball</a>
-        <div class="nav-links">
+        <a class="brand" href="index.html">Learn<span>Pinball</span></a>
+        <div class="nav-links" id="navLinks">
           <a href="index.html" class="${currentPage === 'index.html' ? 'active' : ''}">Home</a>
           <a href="about.html" class="${currentPage === 'about.html' ? 'active' : ''}">About</a>
           <a href="contact.html" class="${currentPage === 'contact.html' ? 'active' : ''}">Contact</a>
         </div>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
       </div>
     </nav>
-    <div class="nav-overlay"></div>
+    <div class="nav-overlay" id="navOverlay"></div>
   `;
 
-  document.body.insertAdjacentHTML("afterbegin", nav);
+  document.body.insertAdjacentHTML("afterbegin", navHTML);
 
-  const toggleButton = document.querySelector(".nav-toggle");
-  const navLinks = document.querySelector(".nav-links");
-  const overlay = document.querySelector(".nav-overlay");
+  const toggleButton = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
+  const overlay = document.getElementById("navOverlay");
 
-  if (toggleButton && navLinks && overlay) {
-    toggleButton.addEventListener("click", () => {
-      const isActive = navLinks.classList.toggle("active");
-      overlay.classList.toggle("active");
-      toggleButton.setAttribute("aria-expanded", isActive);
-    });
+  const toggleMenu = () => {
+    navLinks.classList.toggle("active");
+    overlay.classList.toggle("active");
+    toggleButton.classList.toggle("is-active"); // For the X animation
+  };
 
-    overlay.addEventListener("click", () => {
-      navLinks.classList.remove("active");
-      overlay.classList.remove("active");
-      toggleButton.setAttribute("aria-expanded", false);
-    });
-
-    // Close menu when any link is clicked
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-        overlay.classList.remove("active");
-        toggleButton.setAttribute("aria-expanded", false);
-      });
-    });
-  }
+  toggleButton.addEventListener("click", toggleMenu);
+  overlay.addEventListener("click", toggleMenu);
 });

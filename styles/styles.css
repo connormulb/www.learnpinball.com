@@ -1,350 +1,344 @@
-/* ========================
-   Root Colors & Fonts
-======================== */
 :root {
-  --primary-color: #4ABEFF;   
-  --secondary-color: #ffffff;  
-  --background-color: #333333;
-  --link-color: #ffcc00;
-  --font-body: 'Arial', sans-serif;
-  --font-heading: 'Oxanium', sans-serif; 
-  --header-color: #448fe6;
+  --primary: #4ABEFF;     /* Vibrant Blue */
+  --primary-glow: rgba(74, 190, 255, 0.15);
+  --accent: #FFD700;      /* Gold */
+  --bg: #0f0f11;          /* Darker, richer charcoal */
+  --nav-bg: rgba(22, 22, 24, 0.85); /* Glass effect */
+  --card-item-bg: #1e1e21; 
+  --border: #2d2d31;      
+  --text: #ffffff;
+  --text-dim: #94949e;
+  --font-heading: 'Oxanium', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
 }
 
-/* ========================
-   Global Styles
-======================== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text);
   line-height: 1.6;
-  color: var(--secondary-color);
-  background-color: var(--background-color);
-}
-
-a {
-  color: var(--link-color);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-a:hover {
-  color: var(--primary-color);
+  overflow-x: hidden;
 }
 
 /* ========================
-   Navbar
+   Navigation (Modern Glass)
 ======================== */
 .navbar {
-  background-color: #3073ca;
-  color: white;
-  padding: 1rem 2rem;
+  background: var(--nav-bg);
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 0;
   position: sticky;
   top: 0;
-  z-index: 1200;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 2000; /* Stays above content */
 }
 
 .nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
 .brand {
-  font-weight: bold;
+  font-family: var(--font-heading);
+  font-weight: 800;
   font-size: 1.6rem;
-  color: white;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  color: #fff;
   text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.nav-links {
-  display: flex;
-  gap: 1rem;
-}
+.nav-links { display: flex; gap: 0.5rem; }
 
 .nav-links a {
-  color: white;
   text-decoration: none;
-  padding: 0.5rem 0.75rem;
-  border-radius: 4px;
-  transition: background 0.2s;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  background-color: #002f7a;
-}
-
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  color: white;
-  cursor: pointer;
-}
-
-.nav-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 1000;
-  transition: opacity 0.3s ease;
-}
-
-.nav-overlay.active {
-  display: block;
-  opacity: 1;
-}
-
-/* ========================
-   Hero Section
-======================== */
-.hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin-top: -2rem;
-  min-height: 200px;
-  padding: 2rem;
-}
-
-/* ========================
-   Category Cards / Resource Lists
-======================== */
-.category-card {
-  background-color: #222;              /* dark gray */
-  padding: 1.5rem;
-  border-radius: 10px;
-  margin: 1rem 0;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.4);
-  transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
-  border: 1px solid rgba(255, 255, 255, 0.05); /* subtle border */
-}
-
-.category-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.resource-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.resource-list > li {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-}
-
-.resource-list > li > a {
-  font-weight: bold;
-  text-decoration: underline;
-  color: var(--link-color);
-}
-
-.resource-list > li > a:hover {
-  color: var(--primary-color);
-}
-
-.resource-list > li > ul {
-  list-style-type: disc;
-  margin: 0.3rem 0 0.5rem 1.5rem;
-  color: #ccc;
-  font-size: 0.95rem;
-}
-
-.resource-list > li > ul > li {
-  margin-bottom: 0.3rem;
-}
-
-/* ========================
-   Contact Form
-======================== */
-.contact-form {
-  background-color: #222;
-  color: white;
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 700px;
-  margin: 2rem auto;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.75rem;
-  margin-top: 0.25rem;
-  margin-bottom: 1rem;
-  border: 1px solid #555;
-  border-radius: 6px;
-  background-color: #333;
-  color: white;
-  font-size: 1rem;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: #ccc;
-}
-
-.contact-form button {
-  background-color: #ff3c3c;
-  color: white;
-  border: none;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  font-weight: 600;
   padding: 0.6rem 1.2rem;
   border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
 }
 
-.contact-form button:hover {
-  background-color: darkred;
+.nav-links a:hover, 
+.nav-links a.active { 
+  color: var(--primary); 
+  background: rgba(74, 190, 255, 0.08);
+}
+
+.nav-toggle { 
+  display: none; 
+  background: none; 
+  border: none; 
+  color: var(--primary); 
+  font-size: 1.8rem; 
+  cursor: pointer; 
 }
 
 /* ========================
-   Main / Headings / Cards
+   Hero & Main Structure
 ======================== */
-main {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 1rem;
+main { 
+  max-width: 1100px; 
+  margin: 0 auto; 
+  padding: 2rem 2rem 6rem 2rem; 
+  position: relative;
+  z-index: 1; /* Ensures content is below the navbar stack */
 }
 
-h1, h2, h3 {
+.hero { 
+  padding: 6rem 0;
+  text-align: left;
+}
+
+.hero h1 {
   font-family: var(--font-heading);
-  margin-bottom: 0.5rem;
-  color: var(--header-color);
-  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  font-size: clamp(2.5rem, 8vw, 4.5rem); 
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
 }
 
+.hero p { 
+  font-size: 1.25rem; 
+  color: var(--text-dim); 
+  max-width: 650px; 
+  font-weight: 300;
+}
 
+/* ========================
+   Grid & Category Styling
+======================== */
+.category { margin-bottom: 5rem; }
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+h2::after { content: ""; height: 1px; flex-grow: 1; background: var(--border); }
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card Styling */
 .card {
-  background-color: white;
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
+  background: var(--card-item-bg);
+  padding: 2.25rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
 }
 
 .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  border-color: var(--primary);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4), 0 0 20px var(--primary-glow);
 }
 
-button {
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+.card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
 }
 
-button:hover {
-  background-color: darkred;
+.card:hover h3 { color: var(--primary); }
+
+.card p { 
+  color: var(--text-dim); 
+  font-size: 0.95rem; 
+  line-height: 1.5;
+  margin: 0;
 }
+
+/* ========================
+   About, Contact & Coaching Specifics
+======================== */
+.about-container { max-width: 800px; margin: 0 auto; }
+
+.content-card {
+    background: var(--card-item-bg);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    margin-bottom: 2rem;
+    transition: border-color 0.3s ease;
+}
+
+.content-card:hover { border-color: var(--primary); }
+
+.content-card p { color: var(--text-dim); font-size: 1.1rem; line-height: 1.8; }
+
+.content-card p a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.content-card p a:hover { color: #fff; }
+
+.form-container { max-width: 650px; margin: 0 auto 6rem auto; }
+
+.contact-form {
+    background: var(--card-item-bg);
+    padding: 3rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.contact-form label {
+    display: block;
+    font-family: var(--font-heading);
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    font-family: var(--font-heading);
+    background: var(--primary);
+    color: var(--bg);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.cta-box { text-align: center; }
+.cta-link { display: inline-block; text-decoration: none; }
 
 /* ========================
    Footer
 ======================== */
 footer {
-  width: 100%;
-  background-color: #222;
-  color: #fff;
   text-align: center;
-  padding: 1rem 0;
-  margin-top: 2rem;
+  padding: 4rem 0;
+  border-top: 1px solid var(--border);
+  color: var(--text-dim);
   font-size: 0.9rem;
+  background: var(--nav-bg);
 }
 
 /* ========================
-   About Section
-======================== */
-.about-section {
-  background-color: #444;
-  color: #eee;
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin: 2rem auto;
-  max-width: 800px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-.about-section h2 {
-  font-size: 2rem;
-  color: #4a8ce2;
-  margin-bottom: 1rem;
-}
-
-.about-section p {
-  font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom: 1rem;
-}
-
-.about-section a {
-  color: var(--link-color);
-  text-decoration: underline;
-}
-
-.about-section a:hover {
-  color: #d4ad10;
-}
-
-/* ========================
-   Mobile Responsive
+   Modern Mobile Navbar Fixes
 ======================== */
 @media (max-width: 768px) {
-  main {
-    margin: 1rem;
-    padding: 0.5rem;
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    z-index: 2100; /* Highest layer to ensure button is clickable */
   }
 
-  .card {
-    padding: 0.8rem;
+  .bar {
+    height: 3px;
+    width: 100%;
+    background-color: var(--primary);
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
   }
+
+  /* Hamburger to X Animation */
+  .nav-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+  .nav-toggle.is-active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); background-color: #fff; }
+  .nav-toggle.is-active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); background-color: #fff; }
 
   .nav-links {
-    flex-direction: column;
-    background-color: #3073ca;
     position: fixed;
     top: 0;
-    right: -250px;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: rgba(15, 15, 17, 0.98);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    flex-direction: column;
+    padding: 8rem 2rem;
+    border-left: 1px solid var(--border);
+    transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    z-index: 2050; /* Above navbar but below toggle */
+  }
+
+  .nav-links.active { right: 0; }
+
+  .nav-links a {
+    font-size: 1.5rem;
+    font-family: var(--font-heading);
+    color: #fff;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    width: 100%;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.active a { opacity: 1; transform: translateX(0); }
+
+  /* THE OVERLAY FIX */
+  .nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    width: 250px;
-    padding: 2rem 1rem;
-    gap: 1.5rem;
-    flex-wrap: nowrap;
-    transition: right 0.3s ease;
-    z-index: 1100;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 1500; /* Behind the menu drawer */
+    
+    display: none;       /* Hidden by default */
+    opacity: 0;          /* Invisible by default */
+    pointer-events: none; /* Can't block clicks when invisible */
+    transition: opacity 0.3s ease;
   }
 
-  .nav-links.active {
-    right: 0;
-  }
-
-  .nav-toggle {
+  .nav-overlay.active {
     display: block;
+    opacity: 1;
+    pointer-events: auto; /* Blocks background clicks only when active */
   }
+
 }
