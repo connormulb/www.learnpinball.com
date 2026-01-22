@@ -231,9 +231,18 @@ h2::after { content: ""; height: 1px; flex-grow: 1; background: var(--border); }
     margin-bottom: 1.5rem;
 }
 
+
+.cta-box {
+  color: var(--text-dim); 
+  font-size: 0.95rem; 
+  line-height: 1.5;
+  margin: 0;
+}
+
 .submit-btn {
     width: 100%;
     padding: 1rem;
+    margin-top: 1.5rem;
     font-family: var(--font-heading);
     background: var(--primary);
     color: var(--bg);
